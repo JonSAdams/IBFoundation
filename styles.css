@@ -1,0 +1,101 @@
+.headerImage {
+    max-width: 250px;
+    height: auto; 
+    width: auto;
+    display: block;
+    margin: 0px auto;
+}
+
+p {
+    color: black;
+}
+
+.MainNavigation > li {
+    color: red;
+    display: inline;
+    text-decoration: none;
+}
+
+h3 {
+    color: black;
+}
+.workBench_icon {
+    max-width: 25px;
+    height: auto; 
+    width: auto;
+    text-align: middle;
+    vertical-align: -5px;
+}
+.Arbys_logo {
+    max-width: 30px;
+    height: auto; 
+    width: auto;
+    text-align: middle;
+    vertical-align: 0px;
+}
+
+.BWW_logo {
+    max-width: 25px;
+    height: auto; 
+    width: auto;
+    text-align: middle;
+    vertical-align: -5px;
+}
+
+.SONIC_logo {
+    max-width: 27px;
+    height: auto; 
+    width: auto;
+    text-align: middle;
+    vertical-align: 0px;
+}
+
+.linkList {
+    display: block;
+}
+
+.mainBox {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.levelTwo {
+    background-color: white;
+    border: 1px solid black;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.levelThree > h4,p {
+    color: white;
+    padding: 3px;
+    display: inline-flexbox;
+    margin: 5px;
+}
+
+#cherry {
+    background-color: rgb(228 ,0,70);
+}
+
+#sky {
+    background-color: rgb(0 ,138,216);
+}
+#frost {
+    background-color: rgb(116, 210, 231);
+}
+#midnight {
+    background-color: rgb(40, 87, 128);
+}
+#lemonade {
+    background-color: rgb(254, 221, 0);
+}
+
+
+.breadcrumb > li {
+    display: inline;
+}
+
+.breadcrumb li+li::before {
+    padding: 10px;
+    content: "=>";
+}
