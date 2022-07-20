@@ -1,0 +1,24 @@
+* {
+    font-family: Helvetica;
+    font-size: 22px;
+    color: seashell;
+    background-color: black;
+    opacity: 0.9;
+}
+
+.logo {
+   
+    height: 50px;
+    padding-left: 10px;
+}
+
+.breadcrumb > li {
+    text-align: right;
+    text-decoration: underline;
+    display: inline;
+}
+
+.breadcrumb li+li::before {
+    padding: 10px;
+    content: " "
+}

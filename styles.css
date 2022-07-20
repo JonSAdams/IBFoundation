@@ -86,18 +86,18 @@ h3 {
     content: "=>";
 }
 
-/* Inspire Brand */
+/* Inspire Brands' Colors */
 
     #primary-red {
         background-color: rgb(201 ,37,44);
     }
 
-    #primary-black {
-        background-color: rgb(35 ,31,32)
-    }
-
     #dark-red {
         background-color: rgb(150 ,22,34)
+    }
+
+    #primary-black {
+        background-color: rgb(35 ,31,32)
     }
 
     #grey-1 {
@@ -105,7 +105,7 @@ h3 {
     }
 
     #grey-2 {
-        background-color: rgb(188,190,192)
+        background-color: rgb(188,190,192);
     }
 
     #grey-3 {
@@ -114,6 +114,20 @@ h3 {
 
     #white-1 {
         background-color: rgb(247,248,248)
+    }
+
+    /* Arby's Colors */
+
+    #arbys-red {
+        background-color: rgb(215 ,25,32);
+    }
+
+    #arbys-black {
+        background-color: rgb(49,38,27);
+    }
+
+    #arbys-white {
+        background-color: rgb(255,255,255);
     }
 
 
