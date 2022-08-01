@@ -1,152 +1,149 @@
 * {
-    font-family: "proxima-nova",Arial,Helvetica,Geneva,sans-serif;
+  font-family: "proxima-nova", Arial, Helvetica, Geneva, sans-serif;
 }
 
 .headerImage {
-    max-width: 250px;
-    height: auto; 
-    width: auto;
-    display: block;
-    margin: 0px auto;
+  max-width: 250px;
+  height: auto;
+  width: auto;
+  display: block;
+  margin: 0px auto;
 }
 
 p {
-    color: black;
+  color: black;
 }
 
 .MainNavigation > li {
-    color: red;
-    display: inline;
-    text-decoration: none;
+  color: red;
+  display: inline;
+  text-decoration: none;
 }
 
 h3 {
-    color: black;
+  color: black;
 }
 .workBench_icon {
-    max-width: 25px;
-    height: auto; 
-    width: auto;
-    text-align: middle;
-    vertical-align: -5px;
+  max-width: 25px;
+  height: auto;
+  width: auto;
+  text-align: middle;
+  vertical-align: -5px;
 }
 .Arbys_logo {
-    max-width: 30px;
-    height: auto; 
-    width: auto;
-    text-align: middle;
-    vertical-align: 0px;
+  max-width: 30px;
+  height: auto;
+  width: auto;
+  text-align: middle;
+  vertical-align: 0px;
 }
 
 .BWW_logo {
-    max-width: 25px;
-    height: auto; 
-    width: auto;
-    text-align: middle;
-    vertical-align: -5px;
+  max-width: 25px;
+  height: auto;
+  width: auto;
+  text-align: middle;
+  vertical-align: -5px;
 }
 
 .SONIC_logo {
-    max-width: 27px;
-    height: auto; 
-    width: auto;
-    text-align: middle;
-    vertical-align: 0px;
+  max-width: 27px;
+  height: auto;
+  width: auto;
+  text-align: middle;
+  vertical-align: 0px;
 }
 
 .linkList {
-    display: block;
+  display: block;
 }
 
 .mainBox {
-    border: 1px solid black;
-    padding: 10px;
+  border: 1px solid black;
+  padding: 10px;
 }
 
 .levelTwo {
-    background-color: white;
-    border: 1px solid black;
-    margin-top: 10px;
-    padding-left: 10px;
+  background-color: white;
+  border: 1px solid black;
+  margin-top: 10px;
+  padding-left: 10px;
 }
 
-.levelThree > h4,p {
-    color: white;
-    padding: 3px;
-    display: inline-flexbox;
-    margin: 5px;
+.levelThree > h4,
+p {
+  color: white;
+  padding: 3px;
+  display: inline-flexbox;
+  margin: 5px;
 }
 
 .breadcrumb > li {
-    display: inline;
+  display: inline;
 }
 
-.breadcrumb li+li::before {
-    padding: 10px;
-    content: "=>";
+.breadcrumb li + li::before {
+  padding: 10px;
+  content: "=>";
 }
 
 /* Inspire Brands' Colors */
+#primary-red {
+  background-color: rgb(201, 37, 44);
+}
 
-    #primary-red {
-        background-color: rgb(201 ,37,44);
-    }
+#dark-red {
+  background-color: rgb(150, 22, 34);
+}
 
-    #dark-red {
-        background-color: rgb(150 ,22,34)
-    }
+#primary-black {
+  background-color: rgb(35, 31, 32);
+}
 
-    #primary-black {
-        background-color: rgb(35 ,31,32)
-    }
+#grey-1 {
+  background-color: rgb(91, 91, 91);
+}
 
-    #grey-1 {
-        background-color: rgb(91 ,91,91)
-    }
+#grey-2 {
+  background-color: rgb(188, 190, 192);
+}
 
-    #grey-2 {
-        background-color: rgb(188,190,192);
-    }
+#grey-3 {
+  background-color: rgb(238, 237, 238);
+}
 
-    #grey-3 {
-        background-color: rgb(238,237,238)
-    }
+#white-1 {
+  background-color: rgb(247, 248, 248);
+}
 
-    #white-1 {
-        background-color: rgb(247,248,248)
-    }
+/* Arby's Colors */
 
-    /* Arby's Colors */
+#arbys-red {
+  background-color: rgb(215, 25, 32);
+}
 
-    #arbys-red {
-        background-color: rgb(215 ,25,32);
-    }
+#arbys-black {
+  background-color: rgb(49, 38, 27);
+}
 
-    #arbys-black {
-        background-color: rgb(49,38,27);
-    }
-
-    #arbys-white {
-        background-color: rgb(255,255,255);
-    }
-
+#arbys-white {
+  background-color: rgb(255, 255, 255);
+}
 
 /* SONIC Drive-In Colors */
-    #cherry {
-        background-color: rgb(228 ,0,70);
-    }
+#cherry {
+  background-color: rgb(228, 0, 70);
+}
 
-    #sky {
-        background-color: rgb(0 ,138,216);
-    }
-    #frost {
-        background-color: rgb(116, 210, 231);
-    }
-    #midnight {
-        background-color: rgb(40, 87, 128);
-    }
-    #lemonade {
-        background-color: rgb(254, 221, 0);
-    }
-
-
+#sky {
+  background-color: rgb(0, 138, 216);
+}
+#frost {
+  background-color: rgb(116, 210, 231);
+}
+#midnight {
+  background-color: rgb(40, 87, 128);
+}
+#lemonade {
+  background-color: rgb(254, 221, 0);
+}
