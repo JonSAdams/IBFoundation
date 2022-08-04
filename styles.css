@@ -23,6 +23,14 @@ p {
 h3 {
   color: black;
 }
+
+a {
+  color :black
+}
+
+#Foundation-Websites {
+  display: block;
+}
 .workBench_icon {
   max-width: 25px;
   height: auto;
@@ -30,33 +38,71 @@ h3 {
   text-align: middle;
   vertical-align: -5px;
 }
+
+.container {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 200px 200px;
+  gap: 10px
+}
+
+.res {
+  display: block;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+}
 .Arbys_logo {
-  max-width: 30px;
-  height: auto;
-  width: auto;
-  text-align: middle;
-  vertical-align: 0px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 5px;
+  height: 30px;
 }
 
 .BWW_logo {
-  max-width: 25px;
-  height: auto;
-  width: auto;
-  text-align: middle;
-  vertical-align: -5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 5px;
+  height: 30px;
 }
 
 .SONIC_logo {
-  max-width: 27px;
-  height: auto;
-  width: auto;
-  text-align: middle;
-  vertical-align: 0px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 5px;
+  height: 30px;
+}
+
+.JJs {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 5px;
+  height: 30px;
+}
+
+.RustyTaco_Logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 5px;
+  height: 30px;
 }
 
 .linkList {
   display: block;
 }
+
+.linkList :hover {
+  color: rgb(150, 22, 34);
+  font-size: 18px;
+}
+
 
 .mainBox {
   border: 1px solid black;
@@ -89,7 +135,7 @@ p {
 
 /* Inspire Brands' Colors */
 #primary-red {
-  background-color: rgb(201, 37, 44);
+  background-color: ≈;
 }
 
 #dark-red {
