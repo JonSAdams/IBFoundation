@@ -25,7 +25,7 @@ h3 {
 }
 
 a {
-  color :black
+  color: black;
 }
 
 #Foundation-Websites {
@@ -43,7 +43,7 @@ a {
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: 200px 200px;
-  gap: 10px
+  gap: 10px;
 }
 
 .res {
@@ -52,7 +52,6 @@ a {
   border-radius: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
-  
 }
 .Arbys_logo {
   display: block;
@@ -102,7 +101,6 @@ a {
   color: rgb(150, 22, 34);
   font-size: 18px;
 }
-
 
 .mainBox {
   border: 1px solid black;
@@ -192,4 +190,18 @@ p {
 }
 #lemonade {
   background-color: rgb(254, 221, 0);
+}
+
+
+/* Password Generator */
+
+#generateDiv {
+}
+
+#resultDiv {
+  border: 2px;
+  border-color: black;
+  border-radius: 50%;
+  margin: 50px;
+  padding: 50px;
 }
