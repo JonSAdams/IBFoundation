@@ -114,6 +114,8 @@ a {
   padding-left: 10px;
 }
 
+
+
 .levelThree > h4,
 p {
   color: white;
@@ -162,17 +164,37 @@ p {
 
 /* Arby's Colors */
 
-#arbys-red {
-  background-color: rgb(215, 25, 32);
+#arbys-passion-red {
+  background-color: #dc0032;
 }
 
-#arbys-black {
-  background-color: rgb(49, 38, 27);
+#arbys-dark-red {
+  background-color:#691c33;
+}
+
+#arbys-medium-red {
+  background-color:#981b32;
 }
 
 #arbys-white {
-  background-color: rgb(255, 255, 255);
+  background-color: #FFFFFF;
 }
+#arbys-craft {
+  background-color: #d5b49e;
+}
+#arbys-black {
+  background-color:  #000000;
+}
+#arbys-crisp {
+  background-color: #3A913F;
+}
+#arbys-garnish {
+  background-color: #00573F;
+}
+#arbys-zest {
+  background-color: rgb(178,213,131);
+}
+
 
 /* SONIC Drive-In Colors */
 #cherry {
@@ -192,6 +214,13 @@ p {
   background-color: rgb(254, 221, 0);
 }
 
+.font-black {
+  color: black;
+}
+
+#font-black {
+  color: black;
+}
 
 /* Password Generator */
 
