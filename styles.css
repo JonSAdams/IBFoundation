@@ -39,6 +39,14 @@ a {
   vertical-align: -5px;
 }
 
+.smallCompanyLogos {
+  max-width: 25px;
+  height: auto;
+  width: auto;
+  text-align: middle;
+  vertical-align: -5px;
+}
+
 .container {
   display: grid;
   grid-template-rows: auto;
