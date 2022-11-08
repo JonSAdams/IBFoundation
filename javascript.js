@@ -6,3 +6,8 @@ function openNamingConventions() {
         x.style.display = "none"
     }
 }
+
+function copyTheText() {
+    var copyText = document.getElementById('string-of-text').innerHTML;
+    navigator.clipboard.writeText(copyText);
+    };
