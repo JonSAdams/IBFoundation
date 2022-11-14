@@ -61,6 +61,14 @@ a {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+.sage_logo {
+  max-width: 25px;
+  height: auto;
+  width: auto;
+  text-align: middle;
+  vertical-align: -5px;
+}
+
 .Arbys_logo {
   display: block;
   margin-left: auto;
