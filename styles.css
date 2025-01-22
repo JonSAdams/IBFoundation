@@ -54,6 +54,14 @@ a {
   gap: 10px;
 }
 
+.datablend_logo {
+  max-width: 25px;
+  height: auto;
+  width: auto;
+  text-align: middle;
+  vertical-align: -5px;
+}
+
 .res {
   display: block;
   border: 1px solid black;
