@@ -248,6 +248,9 @@ p {
 
 /* Password Generator */
 
+#generateDiv {
+}
+
 #resultDiv {
   border: 2px;
   border-color: black;
