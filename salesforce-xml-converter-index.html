@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salesforce XML to CSV Converter</title>
+  <link rel="stylesheet" href="salesforce-xml-converter-styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Salesforce XML to CSV Converter</h1>
+    
+    <div class="section">
+      <h2>Input XML</h2>
+      <p>Paste your Salesforce profile/permission set XML below:</p>
+      <textarea id="xmlInput" rows="15" placeholder="Paste Salesforce XML here..."></textarea>
+      <div>
+        <input type="file" id="xmlFile" accept=".xml">
+        <button onclick="salesforceXmlProcessor.loadFile()">Load from File</button>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>Permission Types to Extract</h2>
+      <div class="permission-type">
+        <label><input type="checkbox" id="userPermissions" checked> userPermissions</label>
+        <label><input type="checkbox" id="applicationVisibilities" checked> applicationVisibilities</label>
+        <label><input type="checkbox" id="classAccesses" checked> classAccesses</label>
+        <label><input type="checkbox" id="fieldPermissions" checked> fieldPermissions</label>
+      </div>
+      <div class="permission-type">
+        <label><input type="checkbox" id="objectPermissions" checked> objectPermissions</label>
+        <label><input type="checkbox" id="layoutAssignments" checked> layoutAssignments</label>
+        <label><input type="checkbox" id="tabVisibilities" checked> tabVisibilities</label>
+        <label><input type="checkbox" id="recordTypeVisibilities" checked> recordTypeVisibilities</label>
+      </div>
+      <div class="permission-type">
+        <label><input type="checkbox" id="selectAll" checked onclick="salesforceXmlProcessor.toggleAllPermissions()"> Select All</label>
+      </div>
+    </div>
+    
+    <button onclick="salesforceXmlProcessor.convertToCSV()">Convert to CSV</button>
+    
+    <div id="status" class="hidden"></div>
+    
+    <div id="downloadLinks" class="hidden"></div>
+    
+    <div id="previewSection" class="section hidden">
+      <h2>CSV Preview</h2>
+      <pre id="csvPreview"></pre>
+    </div>
+  </div>
+
+  <script src="salesforce-xml-processor.js"></script>
+</body>
+</html>

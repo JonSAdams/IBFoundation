@@ -1,0 +1,101 @@
+/* Salesforce XML to CSV Converter Styles */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  color: #0070d2; /* Salesforce blue */
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+button {
+  background-color: #0070d2;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+button:hover {
+  background-color: #005fb2;
+}
+
+.section {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+pre {
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+#status {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.hidden {
+  display: none;
+}
+
+#downloadLinks {
+  margin-top: 15px;
+}
+
+#downloadLinks a {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  padding: 8px 12px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 4px;
+}
+
+#downloadLinks a:hover {
+  background-color: #45a049;
+}
+
+.permission-type {
+  margin-bottom: 5px;
+}
+
+label {
+  margin-right: 10px;
+}

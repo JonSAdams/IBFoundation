@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salesforce Profile XML Deduplicator</title>
+  <link rel="stylesheet" href="salesforce-deduplicator-styles.css">
+</head>
+<body>
+  <h1>Salesforce Profile XML Deduplicator</h1>
+  
+  <div class="instructions">
+    <h3>Instructions:</h3>
+    <ol>
+      <li>Upload multiple XML files containing Salesforce profile permissions.</li>
+      <li>Or paste XML content directly into the manual input box.</li>
+      <li>Click "Process XML Files" to merge and deduplicate all permissions.</li>
+      <li>The result will show a combined XML with all duplicates removed.</li>
+      <li>Statistics will show how many of each permission type were found and deduplicated.</li>
+    </ol>
+  </div>
+  
+  <div class="container">
+    <div>
+      <h2>Option 1: Upload XML Files</h2>
+      <div class="file-input-container">
+        <input type="file" id="xmlFileInput" accept=".xml" multiple>
+        <button onclick="salesforceDeduplicator.addFiles()">Add Files</button>
+      </div>
+      
+      <div class="file-list" id="fileList">
+        <div>No files added yet</div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>Option 2: Paste XML Content</h2>
+      <textarea id="manualInput" rows="10" placeholder="Paste XML content here..."></textarea>
+      <button onclick="salesforceDeduplicator.addManualInput()">Add Content</button>
+    </div>
+    
+    <button onclick="salesforceDeduplicator.processXML()">Process XML Files</button>
+    
+    <h2>Result:</h2>
+    <textarea id="output" rows="20" readonly></textarea>
+    <button onclick="salesforceDeduplicator.copyToClipboard()">Copy to Clipboard</button>
+    
+    <div class="stats" id="stats">
+      <h3>Statistics:</h3>
+      <p>Process files to see statistics</p>
+    </div>
+  </div>
+
+  <script src="salesforce-deduplicator-processor.js"></script>
+</body>
+</html>
