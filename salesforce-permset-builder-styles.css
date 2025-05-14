@@ -1,0 +1,407 @@
+/* Salesforce Permission Set Builder Styles */
+
+/* General Styles */
+:root {
+  --salesforce-blue: #0070d2;
+  --salesforce-blue-hover: #005fb2;
+  --light-gray: #f5f5f5;
+  --border-color: #ddd;
+  --text-color: #333;
+  --success-color: #4bca81;
+  --error-color: #c23934;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Salesforce Sans', Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: #f9f9f9;
+  padding-bottom: 2rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1, h2, h3 {
+  color: var(--salesforce-blue);
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Header */
+header {
+  background-color: var(--salesforce-blue);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+header h1 {
+  color: white;
+  margin: 0;
+}
+
+/* Instructions Section */
+.instructions {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.instructions ol {
+  margin-left: 1.5rem;
+}
+
+.instructions li {
+  margin-bottom: 0.5rem;
+}
+
+/* Format Guide */
+.format-guide {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.format-tabs {
+  display: flex;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tab-link {
+  background-color: transparent;
+  border: none;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--text-color);
+  border-bottom: 2px solid transparent;
+}
+
+.tab-link:hover {
+  background-color: var(--light-gray);
+}
+
+.tab-link.active {
+  color: var(--salesforce-blue);
+  border-bottom: 2px solid var(--salesforce-blue);
+}
+
+.tab-content {
+  display: none;
+  padding: 1rem 0;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+code, pre {
+  background-color: var(--light-gray);
+  border-radius: 4px;
+  padding: 0.5rem;
+  font-family: monospace;
+  margin-bottom: 1rem;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-break: break-all;
+  overflow-x: auto;
+}
+
+/* Permission Set Details Form */
+.permset-details {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.form-group textarea {
+  height: 5rem;
+  resize: vertical;
+}
+
+.form-group input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+/* Permissions Input Section */
+.permissions-input {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.upload-section {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.file-label {
+  display: inline-block;
+  background-color: var(--salesforce-blue);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.file-label:hover {
+  background-color: var(--salesforce-blue-hover);
+}
+
+input[type="file"] {
+  display: none;
+}
+
+#file-name {
+  font-style: italic;
+}
+
+.or-divider {
+  text-align: center;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.or-divider:before,
+.or-divider:after {
+  content: "";
+  display: block;
+  width: 45%;
+  height: 1px;
+  background-color: var(--border-color);
+  position: absolute;
+  top: 50%;
+}
+
+.or-divider:before {
+  left: 0;
+}
+
+.or-divider:after {
+  right: 0;
+}
+
+.or-divider span {
+  background-color: white;
+  padding: 0 1rem;
+  position: relative;
+  color: #777;
+}
+
+.csv-input-section {
+  margin-bottom: 1rem;
+}
+
+.csv-input-section textarea {
+  width: 100%;
+  height: 10rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-family: monospace;
+  resize: vertical;
+}
+
+.permission-type-selector {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.permission-type-selector label {
+  margin-right: 1rem;
+  font-weight: bold;
+}
+
+.permission-type-selector select {
+  padding: 0.6rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+button {
+  background-color: var(--salesforce-blue);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: var(--salesforce-blue-hover);
+}
+
+/* Permissions Preview */
+.permissions-preview {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+#permissions-summary {
+  margin-top: 1rem;
+}
+
+.permission-group {
+  margin-bottom: 1.5rem;
+}
+
+.permission-group h3 {
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.permission-count {
+  background-color: var(--salesforce-blue);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+}
+
+.permission-group-list {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 0.5rem;
+  background-color: var(--light-gray);
+}
+
+.permission-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.permission-item:last-child {
+  border-bottom: none;
+}
+
+.permission-remove {
+  color: var(--error-color);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* XML Generation */
+.xml-generation {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+#generate-btn {
+  background-color: var(--success-color);
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+#generate-btn:hover {
+  background-color: #3fa96a;
+}
+
+.result-container {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+#xml-output {
+  width: 100%;
+  height: 20rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-family: monospace;
+  resize: vertical;
+  margin-bottom: 1rem;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Footer */
+footer {
+  background-color: var(--salesforce-blue);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .format-tabs {
+    flex-direction: column;
+  }
+  
+  .tab-link {
+    width: 100%;
+    text-align: left;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .action-buttons button {
+    width: 100%;
+  }
+}

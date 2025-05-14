@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salesforce Permission Set Builder</title>
+  <link rel="stylesheet" href="salesforce-permset-builder-styles.css">
+</head>
+<body>
+  <header>
+    <h1>Salesforce Permission Set Builder</h1>
+  </header>
+  
+  <main class="container">
+    <section class="instructions">
+      <h2>Instructions</h2>
+      <p>This tool helps you create a Salesforce Permission Set XML file from CSV data.</p>
+      <ol>
+        <li>Enter a name and description for your permission set</li>
+        <li>Upload a CSV file with permissions (see format guide below)</li>
+        <li>Or manually enter permissions in the text area</li>
+        <li>Click "Generate Permission Set XML" to create the XML file</li>
+        <li>Copy the generated XML or download it as a file</li>
+      </ol>
+    </section>
+    
+    <section class="format-guide">
+      <h3>CSV Format Guide</h3>
+      <p>Your CSV file should follow one of these formats depending on the permission type:</p>
+      
+      <div class="format-tabs">
+        <button class="tab-link active" onclick="permsetBuilder.showTab('user-tab')">User Permissions</button>
+        <button class="tab-link" onclick="permsetBuilder.showTab('object-tab')">Object Permissions</button>
+        <button class="tab-link" onclick="permsetBuilder.showTab('field-tab')">Field Permissions</button>
+        <button class="tab-link" onclick="permsetBuilder.showTab('class-tab')">Class Access</button>
+      </div>
+      
+      <div id="user-tab" class="tab-content active">
+        <p><strong>User Permissions</strong> - CSV with columns:</p>
+        <code>PermissionName,Enabled</code>
+        <p>Example:</p>
+        <pre>PermissionName,Enabled
+EditTask,true
+EditEvent,true
+ManageUsers,false</pre>
+      </div>
+      
+      <div id="object-tab" class="tab-content">
+        <p><strong>Object Permissions</strong> - CSV with columns:</p>
+        <code>Object,AllowCreate,AllowRead,AllowEdit,AllowDelete,ViewAllRecords,ModifyAllRecords</code>
+        <p>Example:</p>
+        <pre>Object,AllowCreate,AllowRead,AllowEdit,AllowDelete,ViewAllRecords,ModifyAllRecords
+Account,true,true,true,false,false,false
+Contact,true,true,true,false,false,false</pre>
+      </div>
+      
+      <div id="field-tab" class="tab-content">
+        <p><strong>Field Permissions</strong> - CSV with columns:</p>
+        <code>Field,Readable,Editable</code>
+        <p>Example:</p>
+        <pre>Field,Readable,Editable
+Account.Industry,true,true
+Account.Type,true,false
+Contact.Email,true,true</pre>
+      </div>
+      
+      <div id="class-tab" class="tab-content">
+        <p><strong>Class Access</strong> - CSV with columns:</p>
+        <code>ApexClass,Enabled</code>
+        <p>Example:</p>
+        <pre>ApexClass,Enabled
+AccountController,true
+ContactService,true</pre>
+      </div>
+    </section>
+    
+    <section class="permset-details">
+      <h2>Permission Set Details</h2>
+      <div class="form-group">
+        <label for="permset-name">Permission Set Label:</label>
+        <input type="text" id="permset-name" placeholder="e.g., Admin Access" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="permset-description">Description:</label>
+        <textarea id="permset-description" placeholder="Describe the purpose of this permission set"></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label for="activation-required">
+          <input type="checkbox" id="activation-required">
+          Requires Activation
+        </label>
+      </div>
+    </section>
+    
+    <section class="permissions-input">
+      <h2>Permissions Input</h2>
+      
+      <div class="upload-section">
+        <label for="csv-file" class="file-label">Upload CSV File</label>
+        <input type="file" id="csv-file" accept=".csv" onchange="permsetBuilder.handleFileUpload()">
+        <span id="file-name">No file selected</span>
+      </div>
+      
+      <div class="or-divider">
+        <span>OR</span>
+      </div>
+      
+      <div class="csv-input-section">
+        <label for="csv-input">Paste CSV Content:</label>
+        <textarea id="csv-input" placeholder="Paste your CSV content here..."></textarea>
+      </div>
+      
+      <div class="permission-type-selector">
+        <label for="permission-type">Permission Type:</label>
+        <select id="permission-type">
+          <option value="userPermissions">User Permissions</option>
+          <option value="objectPermissions">Object Permissions</option>
+          <option value="fieldPermissions">Field Permissions</option>
+          <option value="classAccesses">Class Access</option>
+        </select>
+      </div>
+      
+      <button id="process-btn" onclick="permsetBuilder.processPermissions()">Add Permissions</button>
+    </section>
+    
+    <section class="permissions-preview">
+      <h2>Current Permissions</h2>
+      <div id="permissions-summary">
+        <p>No permissions added yet.</p>
+      </div>
+    </section>
+    
+    <section class="xml-generation">
+      <button id="generate-btn" onclick="permsetBuilder.generateXML()">Generate Permission Set XML</button>
+      
+      <div class="result-container">
+        <h2>Generated XML</h2>
+        <textarea id="xml-output" readonly></textarea>
+        <div class="action-buttons">
+          <button onclick="permsetBuilder.copyToClipboard()">Copy to Clipboard</button>
+          <button onclick="permsetBuilder.downloadXML()">Download XML</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>Salesforce Permission Set Builder</p>
+  </footer>
+  
+  <script src="salesforce-permset-builder.js"></script>
+</body>
+</html>

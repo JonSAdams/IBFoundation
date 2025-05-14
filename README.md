@@ -133,3 +133,123 @@ If you encounter issues:
 - Prepare permission data for import into other systems
 - Generate reports about field-level security
 - Analyze object permissions across profiles
+
+## Salesforce Permission Set Builder - Documentation
+
+This tool allows you to easily create Salesforce Permission Set XML files from CSV data. It helps Salesforce administrators and developers quickly build permission sets without manually creating XML.
+
+### Files in this Package
+
+1. **salesforce-permset-builder-index.html** - The main HTML file containing the application structure
+2. **salesforce-permset-builder-styles.css** - CSS styles for the application
+3. **salesforce-permset-builder.js** - JavaScript code that handles the CSV parsing and XML generation logic
+
+### How to Use
+
+1. Download all three files and place them in the same directory
+2. Open **salesforce-permset-builder-index.html** in any modern web browser
+3. Enter a name and description for your permission set
+4. Choose whether the permission set requires activation
+5. Add permissions by either:
+   - Uploading a CSV file
+   - Pasting CSV content directly
+6. Select the type of permission you're adding (User Permission, Object Permission, etc.)
+7. Click "Add Permissions" to process the CSV data
+8. Repeat steps 5-7 for different permission types as needed
+9. Click "Generate Permission Set XML" to create the XML file
+10. Copy or download the generated XML for use in Salesforce
+
+### CSV Format Requirements
+
+The tool supports four types of permissions, each with its own required CSV format:
+
+#### User Permissions
+
+```
+PermissionName,Enabled
+EditTask,true
+EditEvent,true
+ManageUsers,false
+```
+
+#### Object Permissions
+
+```
+Object,AllowCreate,AllowRead,AllowEdit,AllowDelete,ViewAllRecords,ModifyAllRecords
+Account,true,true,true,false,false,false
+Contact,true,true,true,false,false,false
+```
+
+#### Field Permissions
+
+```
+Field,Readable,Editable
+Account.Industry,true,true
+Account.Type,true,false
+Contact.Email,true,true
+```
+
+#### Class Access
+
+```
+ApexClass,Enabled
+AccountController,true
+ContactService,true
+```
+
+### Features
+
+- **Easy Permission Entry**: Upload CSV files or paste CSV content
+- **Multiple Permission Types**: Support for user permissions, object permissions, field permissions, and class access
+- **Deduplication**: Automatically handles duplicate entries
+- **Preview**: See all added permissions before generating XML
+- **Downloadable Output**: Save the generated XML directly as a file
+- **Salesforce Standard Format**: Creates XML in the correct format for Salesforce metadata API
+
+### Notes
+
+- The tool always sets the license to "Salesforce" as specified
+- Boolean values in CSV can be represented as "true"/"false", "yes"/"no", "1"/"0", or "y"/"n"
+- The tool handles XML escaping for special characters
+- All processing happens in your browser – no data is sent to any server
+
+### Example XML Output
+
+```xml
+
+
+  Access for sales representatives
+  false
+  Sales Rep Access
+  Salesforce
+  
+    true
+    EditTask
+  
+  
+    true
+    false
+    true
+    true
+    false
+    Account
+    false
+  
+  
+    true
+    Account.Industry
+    true
+  
+  
+    AccountController
+    true
+  
+
+```
+
+### Troubleshooting
+
+- If you get an error while processing CSV, check that your CSV follows the required format for the selected permission type
+- Ensure your CSV has a header row that matches the expected column names
+- Make sure you've selected the correct permission type before clicking "Add Permissions"
+- If you need to remove a permission, click the "✕" next to it in the Current Permissions section
