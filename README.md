@@ -1,12 +1,6 @@
 # masterWorkFile
 
-This project is all about learning how to code and about learning how to style a page that I like. I expect for this project to be messy but useful for me as I work. 
-
-
-
-
-
-
+This project is all about learning how to code and about learning how to style a page that I like. I expect for this project to be messy but useful for me as I work.
 
 ## Salesforce Profile XML Deduplicator - Documentation
 
@@ -79,7 +73,6 @@ If you encounter issues:
 2. Check that the input XML includes the necessary opening and closing tags
 3. Try processing files individually if you're having issues with multiple files
 4. If the output appears empty, check that your input files contained supported permission types
-
 
 ## Salesforce XML to CSV Converter - Documentation
 
