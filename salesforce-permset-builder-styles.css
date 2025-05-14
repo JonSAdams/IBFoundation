@@ -1,4 +1,4 @@
-/* Salesforce Permission Set Builder Styles */
+/* Salesforce Permission Set Builder Styles - Updated */
 
 /* General Styles */
 :root {
@@ -81,6 +81,7 @@ header h1 {
 
 .format-tabs {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 1rem;
   border-bottom: 1px solid var(--border-color);
 }
@@ -93,6 +94,7 @@ header h1 {
   font-weight: bold;
   color: var(--text-color);
   border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
 }
 
 .tab-link:hover {
@@ -161,6 +163,10 @@ pre {
 
 .form-group input[type="checkbox"] {
   margin-right: 0.5rem;
+}
+
+.hidden {
+  display: none;
 }
 
 /* Permissions Input Section */
@@ -261,6 +267,7 @@ input[type="file"] {
   padding: 0.6rem;
   border: 1px solid var(--border-color);
   border-radius: 4px;
+  min-width: 250px;
 }
 
 button {
@@ -298,6 +305,8 @@ button:hover {
   color: var(--text-color);
   margin-bottom: 0.5rem;
   font-size: 1rem;
+  display: flex;
+  align-items: center;
 }
 
 .permission-count {
@@ -323,16 +332,32 @@ button:hover {
   justify-content: space-between;
   padding: 0.5rem;
   border-bottom: 1px solid var(--border-color);
+  align-items: center;
+  background-color: white;
+  border-radius: 3px;
+  margin-bottom: 3px;
 }
 
 .permission-item:last-child {
-  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.permission-details {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.25rem;
 }
 
 .permission-remove {
   color: var(--error-color);
   cursor: pointer;
   font-weight: bold;
+  padding: 0.25rem 0.5rem;
+}
+
+.permission-remove:hover {
+  background-color: var(--light-gray);
+  border-radius: 50%;
 }
 
 /* XML Generation */
@@ -369,6 +394,7 @@ button:hover {
   font-family: monospace;
   resize: vertical;
   margin-bottom: 1rem;
+  font-size: 0.9rem;
 }
 
 .action-buttons {
@@ -395,6 +421,12 @@ footer {
   .tab-link {
     width: 100%;
     text-align: left;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .tab-link.active {
+    border-left: 2px solid var(--salesforce-blue);
+    border-bottom: 1px solid var(--border-color);
   }
   
   .action-buttons {
@@ -403,5 +435,14 @@ footer {
   
   .action-buttons button {
     width: 100%;
+  }
+  
+  .upload-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .file-label {
+    margin-bottom: 0.5rem;
   }
 }

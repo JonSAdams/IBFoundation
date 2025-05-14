@@ -33,6 +33,10 @@
         <button class="tab-link" onclick="permsetBuilder.showTab('object-tab')">Object Permissions</button>
         <button class="tab-link" onclick="permsetBuilder.showTab('field-tab')">Field Permissions</button>
         <button class="tab-link" onclick="permsetBuilder.showTab('class-tab')">Class Access</button>
+        <button class="tab-link" onclick="permsetBuilder.showTab('page-tab')">Page Access</button>
+        <button class="tab-link" onclick="permsetBuilder.showTab('tab-tab')">Tab Visibility</button>
+        <button class="tab-link" onclick="permsetBuilder.showTab('app-tab')">App Visibility</button>
+        <button class="tab-link" onclick="permsetBuilder.showTab('custom-tab')">Custom Metadata</button>
       </div>
       
       <div id="user-tab" class="tab-content active">
@@ -72,6 +76,44 @@ Contact.Email,true,true</pre>
 AccountController,true
 ContactService,true</pre>
       </div>
+      
+      <div id="page-tab" class="tab-content">
+        <p><strong>Page Access</strong> - CSV with columns:</p>
+        <code>ApexPage,Enabled</code>
+        <p>Example:</p>
+        <pre>ApexPage,Enabled
+AccountDetail,true
+ContactList,true</pre>
+      </div>
+      
+      <div id="tab-tab" class="tab-content">
+        <p><strong>Tab Visibility</strong> - CSV with columns:</p>
+        <code>Tab,Visibility</code>
+        <p>Example:</p>
+        <pre>Tab,Visibility
+Account,DefaultOn
+Contact,Available
+Lead,Hidden</pre>
+        <p>Valid visibility values: DefaultOn, DefaultOff, Available, Hidden</p>
+      </div>
+      
+      <div id="app-tab" class="tab-content">
+        <p><strong>Application Visibility</strong> - CSV with columns:</p>
+        <code>Application,Visible,Default</code>
+        <p>Example:</p>
+        <pre>Application,Visible,Default
+Sales,true,true
+Service,true,false</pre>
+      </div>
+      
+      <div id="custom-tab" class="tab-content">
+        <p><strong>Custom Metadata Access</strong> - CSV with columns:</p>
+        <code>Name,Enabled</code>
+        <p>Example:</p>
+        <pre>Name,Enabled
+Custom_Setting__c,true
+Custom_Metadata_Type__mdt,true</pre>
+      </div>
     </section>
     
     <section class="permset-details">
@@ -84,6 +126,14 @@ ContactService,true</pre>
       <div class="form-group">
         <label for="permset-description">Description:</label>
         <textarea id="permset-description" placeholder="Describe the purpose of this permission set"></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label for="api-name">
+          <input type="checkbox" id="custom-api-name">
+          Specify Custom API Name
+        </label>
+        <input type="text" id="api-name-input" placeholder="e.g., Admin_Access" class="hidden">
       </div>
       
       <div class="form-group">
@@ -119,6 +169,10 @@ ContactService,true</pre>
           <option value="objectPermissions">Object Permissions</option>
           <option value="fieldPermissions">Field Permissions</option>
           <option value="classAccesses">Class Access</option>
+          <option value="pageAccesses">Page Access</option>
+          <option value="tabVisibilities">Tab Visibility</option>
+          <option value="applicationVisibilities">Application Visibility</option>
+          <option value="customMetadataTypeAccesses">Custom Metadata Access</option>
         </select>
       </div>
       
