@@ -17,41 +17,6 @@ const specialCharacters = ['!','@','#','$','%','^','&','*','(',')','<','>'];
 
 // Functions
 
-copyBtn.addEventListener('click', () => {
-    const password = passwordResult.innerText;
-    if (!password) return;
-
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(password).then(() => {
-            showCopiedFeedback();
-        }).catch(() => {
-            fallbackCopy(password);
-        });
-    } else {
-        fallbackCopy(password);
-    }
-});
-
-function fallbackCopy(text) {
-    const textarea = document.createElement('textarea');
-    textarea.value = text;
-    textarea.style.position = 'fixed';
-    textarea.style.opacity = '0';
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textarea);
-    showCopiedFeedback();
-}
-
-function showCopiedFeedback() {
-    const original = copyBtn.innerText;
-    copyBtn.innerText = 'Copied!';
-    setTimeout(() => {
-        copyBtn.innerText = original;
-    }, 2000);
-}
-
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const characterAmount = passwordLength.value;
