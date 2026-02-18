@@ -17,6 +17,44 @@ const specialCharacters = ['!','@','#','$','%','^','&','*','(',')','<','>'];
 
 // Functions
 
+function generatePassword(
+        characterAmount,
+        includeUpperCase,
+        includeLowerCase,
+        includeNumbers,
+        includeSpecialCharacters
+    ) {
+        let code = [];
+        if(includeUpperCase) code = code.concat(upperCase);
+        if(includeLowerCase) code = code.concat(lowerCase);
+        if(includeNumbers) code = code.concat(numbers);
+        if(includeSpecialCharacters) code = code.concat(specialCharacters);
+        let passwordCharacters = [];
+        for (let i = 0; i < characterAmount; i++) {
+            const characterCode = code[Math.floor(Math.random() * code.length)];
+            passwordCharacters.push(characterCode);
+        }
+        return passwordCharacters.join('');
+    }
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const characterAmount = passwordLength.value;
+    const includeUpperCase = upperCaseOption.checked;
+    const includeLowerCase = lowerCaseOption.checked;
+    const includeNumbers = numbersOption.checked;
+    const includeSpecialCharacters = specicalOption.checked;
+    const password = generatePassword(
+        characterAmount,
+        includeUpperCase,
+        includeLowerCase,
+        includeNumbers,
+        includeSpecialCharacters
+    );
+
+    passwordResult.innerText = password;
+});
+
 copyBtn.addEventListener('click', () => {
     const password = passwordResult.innerText;
     if (!password) return;
@@ -51,46 +89,3 @@ function showCopiedFeedback() {
         copyBtn.innerText = original;
     }, 2000);
 }
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const characterAmount = passwordLength.value;
-    const includeUpperCase = upperCaseOption.checked;
-    const includeLowerCase = lowerCaseOption.checked;
-    const includeNumbers = numbersOption.checked;
-    const includeSpecialCharacters = specicalOption.checked;
-    const password = generatePassword (
-        characterAmount,
-        includeUpperCase,
-        includeLowerCase,
-        includeNumbers,
-        includeSpecialCharacters
-    );
-
-    passwordResult.innerText = password;
-});
-
-let generatePassword = (
-        characterAmount,
-        includeUpperCase,
-        includeLowerCase,
-        includeNumbers,
-        includeSpecialCharacters
-    ) => {
-        let code = [];
-        if(includeUpperCase) code = code.concat(upperCase);
-        console.log(code);
-        if(includeLowerCase) code = code.concat(lowerCase);
-        console.log(code);
-        if(includeNumbers) code = code.concat(numbers);
-        console.log(code);
-        if(includeSpecialCharacters) code = code.concat(specialCharacters);
-        console.log(code);
-        let passwordCharacters = [];
-        for (let i = 0; i < characterAmount; i++) {
-            const characterCode = code[Math.floor(Math.random() * code.length)];
-            passwordCharacters.push(characterCode);
-        }
-        return passwordCharacters.join('');
-
-    }
