@@ -1,6 +1,6 @@
 // Get DOM Elements
 const passwordResult = document.getElementById('result');
-//const copyBtn = documet.getElementById('copy');
+const copyBtn = document.getElementById('copy');
 const passwordLength = document.getElementById('numberOfCharacters');
 const upperCaseOption = document.getElementById('upperCaseLetters');
 const lowerCaseOption = document.getElementById('lowerCaseLetters');
@@ -16,6 +16,13 @@ const numbers = ['0','1','2','3','4','5','6','7','8','9'];
 const specialCharacters = ['!','@','#','$','%','^','&','*','(',')','<','>'];
 
 // Functions
+
+copyBtn.addEventListener('click', () => {
+    const password = passwordResult.innerText;
+    if (password) {
+        navigator.clipboard.writeText(password);
+    }
+});
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
