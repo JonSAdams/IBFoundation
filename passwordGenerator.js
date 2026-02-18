@@ -1,6 +1,6 @@
 // Get DOM Elements
 const passwordResult = document.getElementById('result');
-const copyBtn = document.getElementById('copy');
+//const copyBtn = documet.getElementById('copy');
 const passwordLength = document.getElementById('numberOfCharacters');
 const upperCaseOption = document.getElementById('upperCaseLetters');
 const lowerCaseOption = document.getElementById('lowerCaseLetters');
