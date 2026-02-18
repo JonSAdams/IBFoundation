@@ -251,11 +251,12 @@ p {
 #generateDiv {
 }
 
-.resultDiv {
-  border: 2px solid black;
-  border-radius: 8px;
-  margin: 10px 0;
-  padding: 12px;
+#resultDiv {
+  border: 2px;
+  border-color: black;
+  border-radius: 50%;
+  margin: 50px;
+  padding: 50px;
 }
 
 body {
