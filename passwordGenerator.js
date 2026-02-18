@@ -1,12 +1,11 @@
 // Get DOM Elements
 const passwordResult = document.getElementById('result');
-const strengthIndicator = document.getElementById('strengthIndicator');
-const copyBtn = document.getElementById('copy');
+//const copyBtn = documet.getElementById('copy');
 const passwordLength = document.getElementById('numberOfCharacters');
 const upperCaseOption = document.getElementById('upperCaseLetters');
 const lowerCaseOption = document.getElementById('lowerCaseLetters');
 const numbersOption = document.getElementById('number');
-const specialOption = document.getElementById('specialCharacters');
+const specicalOption = document.getElementById('specialCharacters');
 const generateBtn = document.getElementById('generate');
 const form = document.getElementById('passwordGenerateForm');
 
@@ -40,18 +39,11 @@ function generatePassword(
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const characterAmount = parseInt(passwordLength.value, 10);
+    const characterAmount = passwordLength.value;
     const includeUpperCase = upperCaseOption.checked;
     const includeLowerCase = lowerCaseOption.checked;
     const includeNumbers = numbersOption.checked;
-    const includeSpecialCharacters = specialOption.checked;
-
-    if (!includeUpperCase && !includeLowerCase && !includeNumbers && !includeSpecialCharacters) {
-        passwordResult.innerText = 'Please select at least one character type.';
-        strengthIndicator.textContent = '';
-        return;
-    }
-
+    const includeSpecialCharacters = specicalOption.checked;
     const password = generatePassword(
         characterAmount,
         includeUpperCase,
@@ -61,7 +53,6 @@ form.addEventListener('submit', (e) => {
     );
 
     passwordResult.innerText = password;
-    updateStrength(includeUpperCase, includeLowerCase, includeNumbers, includeSpecialCharacters, characterAmount);
 });
 
 copyBtn.addEventListener('click', () => {
@@ -97,19 +88,4 @@ function showCopiedFeedback() {
     setTimeout(() => {
         copyBtn.innerText = original;
     }, 2000);
-}
-
-function updateStrength(upper, lower, nums, special, length) {
-    const typesCount = [upper, lower, nums, special].filter(Boolean).length;
-    let score = 0;
-    if (typesCount >= 3) score++;
-    if (typesCount === 4) score++;
-    if (length >= 12) score++;
-    if (length >= 20) score++;
-
-    const levels = ['Weak', 'Fair', 'Good', 'Strong', 'Very Strong'];
-    const colors = ['#e74c3c', '#e67e22', '#f1c40f', '#2ecc71', '#27ae60'];
-    const level = Math.min(score, levels.length - 1);
-    strengthIndicator.textContent = 'Strength: ' + levels[level];
-    strengthIndicator.style.color = colors[level];
 }
